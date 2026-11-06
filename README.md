@@ -1,8 +1,10 @@
 # LILA BLACK · Player Journey Explorer
 
-A browser tool for Level Designers to see how players actually move, fight, loot and die on LILA BLACK's three maps, built from 5 days of production telemetry (Feb 10–14, 2026; 89,104 events, 796 matches, 339 players).
+A browser tool for Level Designers to see how players actually move, fight, loot and die on LILA BLACK's three maps, built from 5 days of production telemetry (Feb 10–14, 2026; 89,104 events, 796 matches, 245 human players and 94 bots).
 
-**Live demo:** `<DEPLOYED_URL>` (see [Deploy](#deploy))
+**Live demo:** https://ganeshbhandarkar-oss.github.io/lila-journey-viz/
+
+Design notes: [ARCHITECTURE.md](ARCHITECTURE.md) (pipeline, coordinate mapping, performance). Findings: [INSIGHTS.md](INSIGHTS.md) (three level-design results with the counts behind them).
 
 ![Death-zone heatmap on Ambrose Valley](docs/heatmap-deaths.png)
 
@@ -61,7 +63,7 @@ There are no runtime secrets or API keys.
 
 The output is a fully static `dist/` folder.
 
-- **GitHub Pages (preconfigured):** push to `main`. A repository admin must set *Settings → Pages → Source* to **GitHub Actions** once (Actions cannot create the Pages site). `.github/workflows/deploy.yml` then builds with base path `/lila-journey-viz/` and publishes to `https://<user>.github.io/lila-journey-viz/`.
+- **GitHub Pages:** push to `main`. `.github/workflows/deploy.yml` builds with base path `/lila-journey-viz/` and publishes to https://ganeshbhandarkar-oss.github.io/lila-journey-viz/. Source is GitHub Actions.
 - **Vercel / Netlify:** import the repo. Framework is Vite, build command is `npm run build`, output folder is `dist`.
 
 ## Repo layout

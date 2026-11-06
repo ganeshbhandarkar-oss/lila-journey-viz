@@ -50,7 +50,7 @@ Pixel space is always 1024² no matter the real image size. The renderer draws t
 - **`ts` units.** The column is typed `timestamp[ms]`, but the integer values behave like match-clock **seconds**: Position samples are 5 units apart, and the median match lasts 382 units (about 6 minutes, consistent with "a match lasts several minutes"). The tool shows `t − min(t)` as m:ss.
 - **Human vs bot** is decided by the `user_id` format (UUID means human), not by event name. Bot journey files contain some `Position` / `Loot` / `BotKilled` rows. They are drawn as bot events exactly as recorded.
 - **Death attribution** (e.g. "killed by bot") is taken from human files, where the event name is unambiguous.
-- **Bots are under-recorded.** 743 of 796 matches contain a single human and no bot files, but those humans still log `BotKill` events. "Bots" counts in the UI therefore mean *bots with a recorded journey*.
+- **Bots are under-recorded.** 743 of 796 matches contain a single human and no bot files, but those humans still log `BotKill` events (2,232 human `BotKill` rows vs 183 logged on bot files). "Bots" counts in the UI therefore mean *bots with a recorded journey*. Distinct ids in the export: 245 humans and 94 bots.
 - One match spans midnight (Feb 10→11). It is assigned to the day holding most of its rows. Feb 14 is partial.
 
 ## Tradeoffs

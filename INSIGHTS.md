@@ -11,7 +11,7 @@ All numbers come from the full dataset (Feb 10–14, all maps) unless a map is n
 **Evidence**
 - 403 of 445 human deaths (**90.6 %**) are `BotKilled`. 39 (8.8 %) are storm deaths, and only **3** are PvP (`Killed`).
 - Across 796 matches there are only **3 `Kill`** events in total.
-- 743 of 796 matches (**93 %**) contain exactly one human.
+- 743 of 796 matches (**93%**) contain exactly one human and no recorded bot journey. Those humans still log `BotKill` events, so bot combat is real even when the bot's path was not written out.
 - Humans log **2,232 bot kills against 403 deaths to bots**, a 5.5 : 1 kill ratio.
 - In the tool: *Ambrose Valley → All matches → Death zones heatmap*.
 
