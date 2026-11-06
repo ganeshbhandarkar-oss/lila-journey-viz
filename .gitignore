@@ -1,0 +1,7 @@
+node_modules
+dist
+*.log
+*.tsbuildinfo
+.venv*
+raw/
+.DS_Store
