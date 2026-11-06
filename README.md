@@ -61,7 +61,7 @@ There are no runtime secrets or API keys.
 
 The output is a fully static `dist/` folder.
 
-- **GitHub Pages (preconfigured):** push to `main`. `.github/workflows/deploy.yml` builds with base path `/lila-journey-viz/`, enables Pages with GitHub Actions as the source, and publishes to `https://<user>.github.io/lila-journey-viz/`.
+- **GitHub Pages (preconfigured):** push to `main`. A repository admin must set *Settings → Pages → Source* to **GitHub Actions** once (Actions cannot create the Pages site). `.github/workflows/deploy.yml` then builds with base path `/lila-journey-viz/` and publishes to `https://<user>.github.io/lila-journey-viz/`.
 - **Vercel / Netlify:** import the repo. Framework is Vite, build command is `npm run build`, output folder is `dist`.
 
 ## Repo layout

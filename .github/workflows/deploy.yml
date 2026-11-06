@@ -34,18 +34,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # Actions is the Pages source. The site must exist before deploy-pages runs.
-      # GITHUB_TOKEN here has pages:write from the workflow permissions above.
-      - name: Enable GitHub Pages
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          repo="${{ github.repository }}"
-          if gh api "repos/${repo}/pages" >/dev/null 2>&1; then
-            gh api --method PUT "repos/${repo}/pages" -f build_type=workflow >/dev/null
-          else
-            gh api --method POST "repos/${repo}/pages" -f build_type=workflow >/dev/null
-          fi
+      # Pages must already exist with Source set to GitHub Actions.
+      # GITHUB_TOKEN can deploy (pages: write) but cannot create the site.
       - id: deployment
         uses: actions/deploy-pages@v4
